@@ -55,4 +55,14 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
 ***
 ## **FileDescription**
 * ***geology.txt***： Geological two-dimensional array raster data provided by the company
-* ***
+* ***transport.txt***： Two-dimensional array raster data of traffic provided by the company
+* ***population.txt***： Population two-dimensional array raster data provided by the company
+* ***Suitability_evaluation.txt***： Generated final suitability two-dimensional array raster data according to the selected weight values (this file will be updated in real time according to the different weight values selected by the user)
+* ***test_data.txt***： The file is a test file for the test_load_data test case. This file contains simple test data to verify that the load_data function in the main script loads data from the file correctly.
+* ***test_suitability.txt***： The file is a test file for the test_save_suitability_evaluation_to_txt test case. This file is used to verify that the save_suitability_evaluation_to_txt method in the main script correctly saves the suitability evaluation data to a text file.
+* ***main.py***： This file is the code and comments that implement all the features of this project
+* ***unit_test.py***： This file is the test code of the project, which is used to test whether the project code can run successfully. If there is an error, the error will be pointed out in detail, so as to facilitate the correction of bugs
+* ***result_1.jpg***： The file is the final suitability image generated after selecting the corresponding weight value (the image will be saved as jpg format, users can input the file name, save path and whether to save)
+* ***test_image.jpg***： This file is used to test whether the save function can run normally. If the file can be generated normally, the code can run normally
+* ***README.md***： This file is a description of the project and the tests, so that the reader can understand the project and how the code runs
+***
