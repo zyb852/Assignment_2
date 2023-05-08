@@ -30,7 +30,13 @@ The script includes a custom MockTkinter context manager that simulates the Tkin
         1. Python comes preinstalled on most Linux systems. You can check if it is installed by running the following command: ***python -V***
         2. Use your system package manager to install Python and Python packages. On Ubuntu and Debian systems, it can be installed using the following command: ***sudo apt-get install python3 python3-pip***
         3. The venv module can be used to create virtual environments to isolate the dependencies of different projects.  
-
+2. After installing Python, make sure you have installed pip, which is a package manager for Python. Since ***Python 3.4***, pip is usually installed with Python. To check if you already have pip installed, enter the following at the command line: ***pip --version*** ， If you see the version information for pip, then you have installed pip successfully. If not, please refer to the https://pip.pypa.io/en/stable/installation/ installation PIP.  
+Next, you need to create a virtual environment to install the project's dependencies. From the command line, go to the directory where your project is located and run the following command: ***python -m venv venv*** ， This will create a virtual environment called "venv" in the project directory. To activate the virtual environment, run the following command:
+    1. For Windows users: ***venv\Scripts\activate***
+    2. For macOS/Linux users： ***source venv/bin/activate***  
+    
+Once the virtual environment is activated, you can install the required dependencies for your project via pip. At the command line, enter the following: ***pip install opencv-python pandas numpy tk matplotlib os unittest*** ， This command will install libraries such as cv2 (OpenCV), pandas, numpy, tkinter, matplotlib, os, and unittest.  
+To check if these libraries have been successfully installed in your virtual environment, you can run the following command: ***pip list*** ， This will display the installed packages and their versions. If you see the names of the required libraries, they have been successfully installed.  
 Here are the Python libraries and their versions needed for this project:
 * cv2 (OpenCV)：4.0.0 and higher
 * pandas：1.0.0 and higher
