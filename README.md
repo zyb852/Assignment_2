@@ -75,18 +75,25 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
 6. End the program: After you have done everything, you can close the program and exit by clicking the Close button in the top right corner of the window.
 ***
 ## **Code Structure**
-1. ***def load_data(file_path: str)***： The function load_data takes an input parameter file_path, which indicates the path of the text file to read. The data is first read from the text file using the read_csv function from the pandas library. The function uses a comma as a separator and has no list head.The function then converts the read data to a numpy array and uses the dtype argument to specify that the data type is np.uint8, which is an unsigned 8-bit integer.Finally, the function returns a numpy array containing the read data.
-2. The ***main_win*** class is the main class of the application and is responsible for creating GUI components, handling user events and handling image data. This class contains the following methods:
-    1. ***def __init__(self,root:tk.Tk)***: This is an initializer that takes a single argument of type tk.Tk,root, for the GUI window object. In this method, the components of your program are created and configured.
-    2. ***root.title("Weight Slider App")***: Sets the title of the window to "Weight Slider App".
-    3. Create a Matplotlib graph object called figure and set the size of the graph to 12x12 inches. Next, you add an axis object named ax to the graph at a position from (0, 0) to (1, 1).
-    4. Create a Tkinter available Matplotlib canvas object with figure as a graphical parameter and place it on the root window. The Matplotlib canvas is placed on the GUI window, filling the entire window and positioned at the top.
-    5. Create three slider controls (geology weight, traffic weight, and population weight) and place them on the root window. The sliders range from 0 to 1 with a step size of 0.001 and are displayed horizontally.
-    6. Sets the initial value of the slider control.
-    7. Create two button controls, bt1 and bt2, for refreshing and saving images, respectively. The self.refresh method is called when the "refresh" button is clicked Call the self.savejpg method when the "save" button is clicked.
-    8. Layout the slider control and add the button control to the right side of the GUI window.
-    9. Create a label that displays the sum of the weights. Listen for slider changes and update the weight sum.
-    10. ***def update_total_weight(self,event)***: A method that updates the sum of the weights. Get the current values of the three slider controls and calculate the sum of the weights. If the weights do not sum to 1, update the value of the slider control to ensure that the weights do.
-    11. ***def refresh(self)*** ：method for refreshing an image The new image is calculated based on the weights and normalized. Four images (geology, traffic, population, and adaptation assessment) are displayed on a canvas. Save the fitness evaluation results to a text file.
-    12. ***def savejpg(self)***: A method to save the image. The file dialog box pops up to get the file path selected by the user. Save the resulting array as an image in JPEG format. The user is prompted to save successfully and the file path is displayed.
-3. ***if __name__ == "__main__"***: The main entry point for the program. Create a window and instantiate main_win
+1. ***main.py***
+    1. ***def load_data(file_path: str)***： The function load_data takes an input parameter file_path, which indicates the path of the text file to read. The data is first read from the text file using the read_csv function from the pandas library. The function uses a comma as a separator and has no list head.The function then converts the read data to a numpy array and uses the dtype argument to specify that the data type is np.uint8, which is an unsigned 8-bit integer.Finally, the function returns a numpy array containing the read data.
+    2. The ***main_win*** class is the main class of the application and is responsible for creating GUI components, handling user events and handling image data. This class contains the following methods:
+        1. ***def __init__(self,root:tk.Tk)***: This is an initializer that takes a single argument of type tk.Tk,root, for the GUI window object. In this method, the components of your program are created and configured.
+        2. ***root.title("Weight Slider App")***: Sets the title of the window to "Weight Slider App".
+        3. Create a Matplotlib graph object called figure and set the size of the graph to 12x12 inches. Next, you add an axis object named ax to the graph at a position from (0, 0) to (1, 1).
+        4. Create a Tkinter available Matplotlib canvas object with figure as a graphical parameter and place it on the root window. The Matplotlib canvas is placed on the GUI window, filling the entire window and positioned at the top.
+        5. Create three slider controls (geology weight, traffic weight, and population weight) and place them on the root window. The sliders range from 0 to 1 with a step size of 0.001 and are displayed horizontally.
+        6. Sets the initial value of the slider control.
+        7. Create two button controls, bt1 and bt2, for refreshing and saving images, respectively. The self.refresh method is called when the "refresh" button is clicked Call the self.savejpg method when the "save" button is clicked.
+        8. Layout the slider control and add the button control to the right side of the GUI window.
+        9. Create a label that displays the sum of the weights. Listen for slider changes and update the weight sum.
+        10. ***def update_total_weight(self,event)***: A method that updates the sum of the weights. Get the current values of the three slider controls and calculate the sum of the weights. If the weights do not sum to 1, update the value of the slider control to ensure that the weights do.
+        11. ***def refresh(self)*** ：method for refreshing an image The new image is calculated based on the weights and normalized. Four images (geology, traffic, population, and adaptation assessment) are displayed on a canvas. Save the fitness evaluation results to a text file.
+        12. ***def savejpg(self)***: A method to save the image. The file dialog box pops up to get the file path selected by the user. Save the resulting array as an image in JPEG format. The user is prompted to save successfully and the file path is displayed.
+    3. ***if __name__ == "__main__"***: The main entry point for the program. Create a window and instantiate main_win
+***
+## ***Matters Need Attention***
+1. When adjusting the slider, make sure the sum of all weights is 1. If the total weight is not 1, the application will automatically adjust the weight.
+2. If all weights are set to 0, an error message box will pop up prompting the user to adjust at least one of the weights.
+3. After the weight values are reassigned, the refresh button must be clicked for the final suitability image to change
+***
