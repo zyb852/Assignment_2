@@ -91,6 +91,10 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
         11. ***def refresh(self)*** ：method for refreshing an image The new image is calculated based on the weights and normalized. Four images (geology, traffic, population, and adaptation assessment) are displayed on a canvas. Save the fitness evaluation results to a text file.
         12. ***def savejpg(self)***: A method to save the image. The file dialog box pops up to get the file path selected by the user. Save the resulting array as an image in JPEG format. The user is prompted to save successfully and the file path is displayed.
     3. ***if __name__ == "__main__"***: The main entry point for the program. Create a window and instantiate main_win
+2. ***unit_test.py***
+    1. ***test_load_data***: This test case checks whether the load_data function in the main script correctly loads the data in the given file.
+    2. ***test_save_suitability_evaluation_to_txt***: This test case verifies that the save_suitability_evaluation_to_txt method in the main script saves the suitability evaluation data to a text file, as expected.
+    3. ***test_savejpg***: This test case ensures that the savejpg method in the main script saves an output image with the correct dimensions to a file.
 ***
 ## ***Matters Need Attention***
 1. When adjusting the slider, make sure the sum of all weights is 1. If the total weight is not 1, the application will automatically adjust the weight.
