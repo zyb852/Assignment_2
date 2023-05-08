@@ -8,6 +8,8 @@ In addition, the software provides a graphical user interface (Graphical User In
 The unit_test.py file provides a unit test suite for your project.This suite is designed to test the functionality of your project, including image manipulation, loading and saving data, and user interaction using a graphical user interface (GUI). The unit test suite contains multiple test cases to ensure the correct execution of the main script and verify the correct functionality of the GUI elements.  
 Unit test scripts use the unittest module to manage and execute test cases. It also uses the unittest.mock module to create mock objects and simulate the behavior of external dependencies such as the Tkinter library.  
 The script includes a custom MockTkinter context manager that simulates the Tkinter library behavior for testing purposes. The context manager is used for the test_savejpg test case.
+
+![image](https://user-images.githubusercontent.com/124676681/236950351-2ba203e9-7237-445a-9e30-21749e641190.png)
 ***
 ## **Main Function**
 - [x] Color images showing geological, transportation, and population data 
@@ -70,9 +72,19 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
 1. Prepare: Store your geological, transportation, and population data as text files and name them ***geology.txt***, ***transport.txt***, and ***population.txt*** respectively. These text files should contain comma-separated numbers, with each line representing a row of pixels of the image. Make sure the files are in the same directory as the code files. (The above text file will be automatically loaded when you run the program)
 2. Run the program: From the command line, navigate to the directory containing the code files, and run the program by typing the following: ***python main.py***
 3. Adjusting weights: The program will open a window containing geological, traffic, and population images as well as weighted images. You'll see three sliders controlling the weights for geological, transportation, and population data, respectively. Adjust these weights using the slider to assign the appropriate weight to each dataset according to your needs. (In the program, we set a limit that the weight values cannot be 0 at the same time.If the sliders are all 0, a window will pop up to remind the user to correct. In addition, the sum of the ideal weight values is set to 1. If the sum of the actual weight values is greater than or less than 1, the weights will be distributed proportionally so that the result is 1.)
-4. Update the image: After adjusting the weights, click the ***"refresh"*** button. The program will calculate the weighted image based on the weights you choose and update the displayed image in the window.
-5. save the weighted image: If you are satisfied with the calculated weighted image, click the ***"Save"*** button. This will open a file dialog box where you can select where you want to save the weighted image as a JPEG format file. Select a location and click "Save", the image will be saved to the location of your choice.
-6. End the program: After you have done everything, you can close the program and exit by clicking the Close button in the top right corner of the window.
+
+
+![image](https://user-images.githubusercontent.com/124676681/236950922-d4fc067c-78bb-48c6-af13-521d98d7345f.png)
+![image](https://user-images.githubusercontent.com/124676681/236951127-6a62d14a-09b5-4568-b54f-edd588a0bbfe.png)
+![image](https://user-images.githubusercontent.com/124676681/236951176-d88aedb5-b7b1-40ad-b5ea-562a032cdad7.png)
+
+5. Update the image: After adjusting the weights, click the ***"refresh"*** button. The program will calculate the weighted image based on the weights you choose and update the displayed image in the window.
+6. save the weighted image: If you are satisfied with the calculated weighted image, click the ***"Save"*** button. This will open a file dialog box where you can select where you want to save the weighted image as a JPEG format file. Select a location and click "Save", the image will be saved to the location of your choice.
+7. End the program: After you have done everything, you can close the program and exit by clicking the Close button in the top right corner of the window.
+
+
+
+![image](https://user-images.githubusercontent.com/124676681/236950708-da1444bf-2515-463d-a39b-776ec07f9a65.png)
 ***
 ## **Code Structure**
 1. ***main.py***
@@ -101,3 +113,21 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
 2. If all weights are set to 0, an error message box will pop up prompting the user to adjust at least one of the weights.
 3. After the weight values are reassigned, the refresh button must be clicked for the final suitability image to change
 ***
+## **Thoughts and Problems Encountered While Writing the Project**
+1. ***Editorial Thought***
+    1. python library of choice: OpenCV is mainly used for reading and processing image data, including image conversion, filtering, color space conversion, image stitching, etc. In this project, we read and processed three image data using OpenCV, and then synthesized them into a single adaptive evaluation image. Matplotlib is mainly used for plotting charts and images, including histograms, line charts, scatter plots, bar charts, and so on. In this project, we used Matplotlib to display and save the fitness evaluation images. The underlying implementation differs: OpenCV is written in C++, and Matplotlib is written in Python, which makes OpenCV faster to execute, while Matplotlib is easier to use and write. The interface is also different.OpencV's interface is mostly functions and classes, whereas Matplotlib is object-based and provides a variety of customizable plotting methods and parameters. But in this project, both play an important role, and I think both are suitable for use.
+2. ***Problem Encountered***
+    1. When loading the file, I tried to add an automatic pop-up file selection window. This part of the code was successful, but when I tried to achieve a feature that the order of file selection was consistent with the order of the weight slider and the order of the weight image, my code didn't succeed. Three things happened at runtime:
+        1. The image was not loaded successfully
+        2. The program is stuck and needs to exit and reenter
+        3. The image loads, but it's a little weird
+
+<img width="489" alt="1683586151235" src="https://user-images.githubusercontent.com/124676681/236955220-3bbd8659-6136-4df0-8b6a-25c9b7f4d1c4.png">
+
+    2. For the final suitability image: I wanted to implement the real-time update function of the image, that is, I didn't need to click the refresh button, and as the slider moved, the image would automatically change accordingly, but I didn't succeed.
+    3. For the distribution of weight values: Since the total weight is set to 1, if the weight value is greater or less than 1, it will be proportionally distributed. However, after allocation, sometimes there will be some errors. I can reduce the error value as much as possible by increasing the number of digits after the decimal point, but it seems impossible to eliminate the error.
+***
+## **Summary and Reflection**
+In my opinion, this code is a good implementation of what the company wanted, which is to easily select the weight of each factor and visualize the appropriateness. And to a certain extent, it can provide reference for the site selection of the company's factory. But that doesn't mean the code is perfect. As I mentioned above, there is a lot that could be improved.
+
+    
