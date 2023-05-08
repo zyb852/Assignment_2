@@ -4,6 +4,11 @@
 The goal of this project in Python was to develop software for a company that produces stone to help them explore three important factors to consider when opening a factory in the UK: ***geography***, ***transport***, and ***population***. The software uses ***two-dimensional raster data*** provided by the company for each factor (values range from [0, 255], with higher values indicating a better location for the plant) to generate a suitability image for each factor. Finally, by assigning different weight values to each factor and adding the weighted factors, the comprehensive suitability image and its two-dimensional raster data are generated to give the overall suitability score of each raster location.  
 In addition, the software provides a graphical user interface (Graphical User Interface，GUI), allowing users to easily select the weight values of different factors through the slider, and view the suitability image under the weight assignment in real time, which realizes the visualization of the data results. Users can also save the suitability image as JPG format for easy viewing and further analysis and decision making at any time.
 ***
+## **Testing the code**
+The unit_test.py file provides a unit test suite for your project.This suite is designed to test the functionality of your project, including image manipulation, loading and saving data, and user interaction using a graphical user interface (GUI). The unit test suite contains multiple test cases to ensure the correct execution of the main script and verify the correct functionality of the GUI elements.  
+Unit test scripts use the unittest module to manage and execute test cases. It also uses the unittest.mock module to create mock objects and simulate the behavior of external dependencies such as the Tkinter library.  
+The script includes a custom MockTkinter context manager that simulates the Tkinter library behavior for testing purposes. The context manager is used for the test_savejpg test case.
+***
 ## **Main Function**
 - [x] Color images showing geological, transportation, and population data 
 - [x] The weights of geological, transportation, and demographic data are adjusted in real time using slider controls 
@@ -12,19 +17,19 @@ In addition, the software provides a graphical user interface (Graphical User In
 - [x] Save the suitability evaluation matrix to a text file
 ***
 ## **Environment Dependencies**
-This project is recommended to run with Python ***3.6*** and ***higher***.
-1. Set up your Python environment on Windows:
-    1. Download Python installer, recommended download from the official website: https://www.python.org/downloads/
-    2. Run the installer, select Custom Install, and check Add Python to your system environment variable.
-    3. Once the installation is complete, open a command prompt or PowerShell and type python -V. If the Python version is outputted correctly, your Python environment has been configured.
-2. Set up your Python environment on Mac OS:
-    1. The Mac OS comes with Python, but you may need to install the Xcode command-line tool to support Python development.
-    2. To install Python using Homebrew, you can use the following command: brew install python
-    3. Configuring a virtual environment can help manage Python dependencies. You can use the venv module to create virtual environments.
-3. Set up your Python environment on Linux:
-    1. Python comes preinstalled on most Linux systems. You can check if it is installed by running the following command: python -V
-    2. Use your system package manager to install Python and Python packages. On Ubuntu and Debian systems, it can be installed using the following command: sudo apt-get install python3 python3-pip
-    3. The venv module can be used to create virtual environments to isolate the dependencies of different projects.  
+1. This project is recommended to run with Python ***3.7*** and ***higher***.
+    1. Set up your Python environment on Windows:
+        1. Download Python installer, recommended download from the official website: https://www.python.org/downloads/
+        2. Run the installer, select Custom Install, and check Add Python to your system environment variable.
+        3. Once the installation is complete, open a command prompt or PowerShell and type ***python -V***. If the Python version is outputted correctly, your Python environment has been configured.
+    2. Set up your Python environment on Mac OS:
+        1. The Mac OS comes with Python, but you may need to install the Xcode command-line tool to support Python development.
+        2. To install Python using Homebrew, you can use the following command: ***brew install python***
+        3. Configuring a virtual environment can help manage Python dependencies. You can use the venv module to create virtual environments.
+    3. Set up your Python environment on Linux:
+        1. Python comes preinstalled on most Linux systems. You can check if it is installed by running the following command: ***python -V***
+        2. Use your system package manager to install Python and Python packages. On Ubuntu and Debian systems, it can be installed using the following command: ***sudo apt-get install python3 python3-pip***
+        3. The venv module can be used to create virtual environments to isolate the dependencies of different projects.  
 
 Here are the Python libraries and their versions needed for this project:
 * cv2 (OpenCV)：4.0.0 and higher
