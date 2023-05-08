@@ -18,22 +18,22 @@ The script includes a custom MockTkinter context manager that simulates the Tkin
 ***
 ## **Environment Dependencies**
 1. This project is recommended to run with Python ***3.7*** and ***higher***.
-    1. Set up your Python environment on Windows:
+    1. Set up your Python environment on ***Windows***:
         1. Download Python installer, recommended download from the official website: https://www.python.org/downloads/
         2. Run the installer, select Custom Install, and check Add Python to your system environment variable.
         3. Once the installation is complete, open a command prompt or PowerShell and type ***python -V***. If the Python version is outputted correctly, your Python environment has been configured.
-    2. Set up your Python environment on Mac OS:
+    2. Set up your Python environment on ***Mac OS***:
         1. The Mac OS comes with Python, but you may need to install the Xcode command-line tool to support Python development.
         2. To install Python using Homebrew, you can use the following command: ***brew install python***
         3. Configuring a virtual environment can help manage Python dependencies. You can use the venv module to create virtual environments.
-    3. Set up your Python environment on Linux:
+    3. Set up your Python environment on ***Linux***:
         1. Python comes preinstalled on most Linux systems. You can check if it is installed by running the following command: ***python -V***
         2. Use your system package manager to install Python and Python packages. On Ubuntu and Debian systems, it can be installed using the following command: ***sudo apt-get install python3 python3-pip***
         3. The venv module can be used to create virtual environments to isolate the dependencies of different projects.  
 2. After installing Python, make sure you have installed pip, which is a package manager for Python. Since ***Python 3.4***, pip is usually installed with Python. To check if you already have pip installed, enter the following at the command line: ***pip --version*** ， If you see the version information for pip, then you have installed pip successfully. If not, please refer to the https://pip.pypa.io/en/stable/installation/ installation PIP.  
 Next, you need to create a virtual environment to install the project's dependencies. From the command line, go to the directory where your project is located and run the following command: ***python -m venv venv*** ， This will create a virtual environment called "venv" in the project directory. To activate the virtual environment, run the following command:
     1. For Windows users: ***venv\Scripts\activate***
-    2. For macOS/Linux users： ***source venv/bin/activate***  
+    2. For macOS/Linux users: ***source venv/bin/activate***  
     
 Once the virtual environment is activated, you can install the required dependencies for your project via pip. At the command line, enter the following: ***pip install opencv-python pandas numpy tk matplotlib os unittest*** ， This command will install libraries such as cv2 (OpenCV), pandas, numpy, tkinter, matplotlib, os, and unittest.  
 To check if these libraries have been successfully installed in your virtual environment, you can run the following command: ***pip list*** ， This will display the installed packages and their versions. If you see the names of the required libraries, they have been successfully installed.  
@@ -43,11 +43,16 @@ Here are the Python libraries and their versions needed for this project:
 * numpy：1.16.0 and higher
 * tkinter：8.6.0 and higher
 * matplotlib：3.0.0 and higher
+* os
+* unittest  
 
 Common ways to configure python libraries are：
-1. Installing Python libraries with pip: Python libraries can be installed using the pip tool, either from the command line or in the terminal with the following command: pip install library name. For example, to install the cv2 library, you can use the following command: pip install opencv-python. If you want to install a specific version of the library, you can use a command like this: pip installLibrary name == version number.
-2. Installing Python libraries with Anaconda: If you are using Anaconda Python environment, you can use the conda tool to install Python libraries. This can be installed from the command line or terminal using the following command: conda install library name. For example, to install the numpy library, you can use the following command: conda install numpy.
-3. Install Python libraries in IDE: If you are using a Python IDE like PyCharm, Spyder, etc., you can install libraries directly in the IDE. Library management options can usually be found in the IDE's Settings or preferences. For example, in PyCharm, the library manager can be found under File->Settings->Project->Project Interpreter.
+1. Installing Python libraries with pip: Python libraries can be installed using the pip tool, either from the command line or in the terminal with the following command: pip install library name. For example, to install the cv2 library, you can use the following command: ***pip install opencv-python***. If you want to install a specific version of the library, you can use a command like this: ***pip installLibrary name == version number***.
+2. Installing Python libraries with Anaconda: If you are using Anaconda Python environment, you can use the conda tool to install Python libraries. This can be installed from the command line or terminal using the following command: ***conda install library name***. For example, to install the numpy library, you can use the following command: ***conda install numpy***.
+3. Install Python libraries in IDE: If you are using a Python IDE like PyCharm, Spyder, etc., you can install libraries directly in the IDE. Library management options can usually be found in the IDE's Settings or preferences. For example, in PyCharm, the library manager can be found under ***File->Settings->Project->Project Interpreter***.
 
 Some libraries (such as cv2 and matplotlib) may require the use of system libraries to support certain features (such as graphical interfaces). In this case, it is necessary to ensure that the appropriate system libraries are installed and that the correct environment variables (e.g., LD_LIBRARY_PATH) are configured. If you have problems installing the library, refer to the tutorials and help files in the official documentation or community forums.
 ***
+## **FileDescription**
+* ***geology.txt***： Geological two-dimensional array raster data provided by the company
+* ***
