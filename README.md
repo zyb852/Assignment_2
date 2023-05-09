@@ -56,7 +56,7 @@ Common ways to configure python libraries are：
 Some libraries (such as cv2 and matplotlib) may require the use of system libraries to support certain features (such as graphical interfaces). In this case, it is necessary to ensure that the appropriate system libraries are installed and that the correct environment variables (e.g., LD_LIBRARY_PATH) are configured. If you have problems installing the library, refer to the tutorials and help files in the official documentation or community forums.
 ***
 ## **FileDescription**
-* [***geology.txt***](/example/geology.txt)： Geological two-dimensional array raster data provided by the company
+* [***geology.txt***](/geology.txt)： Geological two-dimensional array raster data provided by the company
 * ***transport.txt***： Two-dimensional array raster data of traffic provided by the company
 * ***population.txt***： Population two-dimensional array raster data provided by the company
 * ***Suitability_evaluation.txt***： Generated final suitability two-dimensional array raster data according to the selected weight values (this file will be updated in real time according to the different weight values selected by the user)
