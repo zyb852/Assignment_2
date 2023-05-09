@@ -1,6 +1,19 @@
 # **Site Suitability**
 ***
-## **Background/Purpose of the Project**
+## **Catalogue**
+* **Background/Purpose of the Project**
+* **Testing the code**
+* **Main Function**
+* **Environment Dependencies**
+* **FileDescription**
+* **How to use this project**
+* **Code Structure**
+    * ***main.py***
+    * ***unit_test.py***
+* **Matters Need Attention**
+* **Thoughts and Problems Encountered While Writing the Project**
+* **Summary and Reflection**
+## **Background/Purpose of the Project** <a name="**Background/Purpose of the Project**"></a>
 The goal of this project in Python was to develop software for a company that produces stone to help them explore three important factors to consider when opening a factory in the UK: ***geography***, ***transport***, and ***population***. The software uses ***two-dimensional raster data*** provided by the company for each factor (values range from [0, 255], with higher values indicating a better location for the plant) to generate a suitability image for each factor. Finally, by assigning different weight values to each factor and adding the weighted factors, the comprehensive suitability image and its two-dimensional raster data are generated to give the overall suitability score of each raster location.  
 In addition, the software provides a graphical user interface (Graphical User Interface，GUI), allowing users to easily select the weight values of different factors through the slider, and view the suitability image under the weight assignment in real time, which realizes the visualization of the data results. Users can also save the suitability image as JPG format for easy viewing and further analysis and decision making at any time.
 ***
@@ -65,8 +78,8 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
 * [***main.py***](main.py)： This file is the code and comments that implement all the features of this project
 * [***unit_test.py***](unit_test.py)： This file is the test code of the project, which is used to test whether the project code can run successfully. If there is an error, the error will be pointed out in detail, so as to facilitate the correction of bugs
 * [***result_1.jpg***](result_1.jpg)： The file is the final suitability image generated after selecting the corresponding weight value (the image will be saved as jpg format, users can input the file name, save path and whether to save)
-* ***test_image.jpg***： This file is used to test whether the save function can run normally. If the file can be generated normally, the code can run normally
-* ***README.md***： This file is a description of the project and the tests, so that the reader can understand the project and how the code runs
+* [***test_image.jpg***](test_image.jpg)： This file is used to test whether the save function can run normally. If the file can be generated normally, the code can run normally
+* [***README.md***](README.md)： This file is a description of the project and the tests, so that the reader can understand the project and how the code runs
 ***
 ## **How to use this project**
 1. Prepare: Store your geological, transportation, and population data as text files and name them ***geology.txt***, ***transport.txt***, and ***population.txt*** respectively. These text files should contain comma-separated numbers, with each line representing a row of pixels of the image. Make sure the files are in the same directory as the code files. (The above text file will be automatically loaded when you run the program)
@@ -108,7 +121,7 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
     2. ***test_save_suitability_evaluation_to_txt***: This test case verifies that the save_suitability_evaluation_to_txt method in the main script saves the suitability evaluation data to a text file, as expected.
     3. ***test_savejpg***: This test case ensures that the savejpg method in the main script saves an output image with the correct dimensions to a file.
 ***
-## ***Matters Need Attention***
+## **Matters Need Attention**
 1. When adjusting the slider, make sure the sum of all weights is 1. If the total weight is not 1, the application will automatically adjust the weight.
 2. If all weights are set to 0, an error message box will pop up prompting the user to adjust at least one of the weights.
 3. After the weight values are reassigned, the refresh button must be clicked for the final suitability image to change
