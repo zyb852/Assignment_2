@@ -135,13 +135,14 @@ Some libraries (such as cv2 and matplotlib) may require the use of system librar
         1. The image was not loaded successfully
         2. The program is stuck and needs to exit and reenter
         3. The image loads, but it's a little weird
+   2. For the final suitability image: I wanted to implement the real-time update function of the image, that is, I didn't need to click the refresh button, and as the slider moved, the image would automatically change accordingly, but I didn't succeed.
+   3. For the distribution of weight values: When calculating the sum of weight values, I add the weights of the three, which may lead to the sum of weight values greater than or less than 1. In this case, according to the algorithm I wrote, 1 will be divided by the current weight value to obtain a proportion. Multiplying the weight values of the three impact factors with this proportion will obtain the weight values of the three factors in proportion under this condition. In an ideal world, this weight should always sum to 1, but due to the shortcomings of the method itself, small errors may occur, such as 0.99 and 1.01 when setting two decimal places, 0.999 and 1.001 when setting three decimal places. This error can be reduced by increasing the number of decimal places. But it can't be eliminated. In addition, too many digits will also cause some trouble to the balance and adjustment of the influence factors of the site selection in real life.
 
-<img width="489" alt="1683586151235" src="https://user-images.githubusercontent.com/124676681/236955220-3bbd8659-6136-4df0-8b6a-25c9b7f4d1c4.png">
 
-    2. For the final suitability image: I wanted to implement the real-time update function of the image, that is, I didn't need to click the refresh button, and as the slider moved, the image would automatically change accordingly, but I didn't succeed.
-    3. For the distribution of weight values: When calculating the sum of weight values, I add the weights of the three, which may lead to the sum of weight values greater than or less than 1. In this case, according to the algorithm I wrote, 1 will be divided by the current weight value to obtain a proportion. Multiplying the weight values of the three impact factors with this proportion will obtain the weight values of the three factors in proportion under this condition. In an ideal world, this weight should always sum to 1, but due to the shortcomings of the method itself, small errors may occur, such as 0.99 and 1.01 when setting two decimal places, 0.999 and 1.001 when setting three decimal places. This error can be reduced by increasing the number of decimal places. But it can't be eliminated. In addition, too many digits will also cause some trouble to the balance and adjustment of the influence factors of the site selection in real life.
+<img width="489" alt="1683586151235" src="https://user-images.githubusercontent.com/124676681/236955220-3bbd8659-6136-4df0-8b6a-25c9b7f4d1c4.png">  
+
 ***
-## **Summary and Reflection**
+## **Summary and Reflection**  
 In my opinion, this code is a good implementation of what the company wanted, which is to easily select the weight of each factor and visualize the appropriateness. And to a certain extent, it can provide reference for the site selection of the company's factory. But that doesn't mean the code is perfect. As I mentioned above, there is a lot that could be improved.
 
     
